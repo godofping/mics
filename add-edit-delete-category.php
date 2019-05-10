@@ -1,11 +1,10 @@
 <?php 
-session_start();
+include('connection.php');
+
+//$getUserQry = mysqli_query($connection, "select * from addaccounttable where AddAccountId = '" . $_SESSION["AddAccountId"] . "'");
 
 
-$connection = mysqli_connect("localhost","root","vertrigo");
-mysqli_select_db($connection, "micsdb");
-
-$getUserQry = mysqli_query($connection, "select * from addaccounttable where AddAccountId = '" . $_SESSION["AddAccountId"] . "'");
+$getUserQry = mysqli_query($connection, "SELECT * FROM addaccounttable WHERE AddAccountId = '" . $_SESSION["AddAccountId"] . "' AND active = '" . 1 . "'");
 $getUserRes = mysqli_fetch_assoc($getUserQry);
 
  ?>
@@ -66,12 +65,12 @@ $getUserRes = mysqli_fetch_assoc($getUserQry);
     <header id="header" class="page-topbar">
         <!-- start header nav-->
         <div class="navbar-fixed">
-            <nav class="cyan">
+            <nav class="blue darken-4">
                 <div class="nav-wrapper">
                     <h1 class="logo-wrapper"><a href="main.php" class="brand-logo darken-1"><img src="images/materialize-logo.png" alt="materialize logo"></a> <span class="logo-text">MICS</span></h1>
                     <ul class="right hide-on-med-and-down">
                         <li class="search-out">
-                            <input type="text" class="search-out-text">
+                            <input type="text" id="search" class="search-out-text">
                         </li>
                         <li>    
                             <a href="javascript:void(0);" class="waves-effect waves-block waves-light show-search"><i class="mdi-action-search"></i></a>                              
@@ -79,6 +78,8 @@ $getUserRes = mysqli_fetch_assoc($getUserQry);
                         <li><a href="javascript:void(0);" class="waves-effect waves-block waves-light toggle-fullscreen"><i class="mdi-action-settings-overscan"></i></a>
                         </li>
                         
+                        <li><a href="logout.php" class="btn-flat waves-effect violet accent-2 white-text"> Logout</a>
+                                    </li>
                         <!-- Dropdown Trigger -->                        
                         
                     </ul>
@@ -126,17 +127,17 @@ $getUserRes = mysqli_fetch_assoc($getUserQry);
                     <?php if ($_SESSION["userlevel"] == 1) { ?>
                         <li class="bold"><a href="add-edit-delete-accounts.php" class="waves-effect waves-cyan"><i class="mdi-action-account-box"></i> Accounts</a>
                     </li>
-                      <?php } ?>
+                     
                     
 
                     <li class="bold"><a href="add-edit-delete-category.php" class="waves-effect waves-cyan"><i class="mdi-action-toc"></i> Categories</a>
                     </li>
-
+ <?php } ?>
                   
 
                    
                     <?php 
-                    $qry = mysqli_query($connection,"select * from categorytable group by CategoryId");
+                    $qry = mysqli_query($connection,"select * from categorytable where acivate = 1 group by CategoryId");
                     while ($result = mysqli_fetch_assoc($qry)) { ?>
                     
                     <li class="no-padding">
@@ -145,16 +146,16 @@ $getUserRes = mysqli_fetch_assoc($getUserQry);
                             
 
 
-                            <li class="bold"><a class="collapsible-header waves-effect waves-cyan"><i class="mdi-navigation-expand-more"></i> <?php echo $result['NameOfCategory'] ?></a>
+                            <li class="bold"><a  style="padding-left: 0.6cm;" class="collapsible-header waves-effect waves-cyan"><i class="mdi-navigation-expand-more"></i> <?php echo $result['NameOfCategory'] ?></a>
                                 <div class="collapsible-body">
                                     <ul>
                                     <?php 
-                    $qry1 = mysqli_query($connection,"select * from subcategorytable where CategoryId = '" . $result['CategoryId'] . "'");
+                    $qry1 = mysqli_query($connection,"select * from subcategorytable where CategoryId = '" . $result['CategoryId'] . "' and activate = 1");
                     while ($result1 = mysqli_fetch_assoc($qry1)) { ?>
-                                        <li><a href="menu.php?SubCategoryId=<?php echo $result1['SubCategoryId']; ?>"> <?php echo $result1['NameOfSubCategory'] ?></a>
+                                        <li><a  style="padding-left: 0.8cm;" href="menu.php?SubCategoryId=<?php echo $result1['SubCategoryId']; ?>"> <?php echo $result1['NameOfSubCategory'] ?></a>
                                         </li>
                                           <?php } ?>
-                                          <li><a href="add-edit-delete-subcategory.php?CategoryId=<?php echo $result['CategoryId']; ?>"> Add Edit Del S-Category</a>
+                                          <li><a href="add-edit-delete-subcategory.php?CategoryId=<?php echo $result['CategoryId']; ?>">  new S-Category<br></a>
                                         </li>
                                     </ul>
                                 </div>
@@ -217,6 +218,21 @@ $getUserRes = mysqli_fetch_assoc($getUserQry);
                   
                     <h4 class="header">Add - Edit - Delete Categories</h4>
 
+<?php 
+                    if (isset($_GET['istaken'])) {
+                        ?>
+                        <div class="alert alert-danger">
+                       <i class="mdi-alert-error icon yellow-text text-darken-3"></i> <strong>Warning!</strong> Registration failed! Username is already taken.
+                    </div>
+
+                        <?php
+                    } elseif (isset($_GET['success'])) { ?>
+                    <div class="alert alert-success">
+                       <i class="mdi-navigation-check icon green-text text-darken-3"></i> <strong>Success!</strong> The Item is deleted!
+                    </div>
+                    <?php } ?>
+
+
                      <div class="row">
                             <div class="input-field col s12">
                     
@@ -234,29 +250,9 @@ $getUserRes = mysqli_fetch_assoc($getUserQry);
               <div class="row">
                 <div class="container">
                 <div class="col s12 m12 20">
-                  <table>
-                    <thead>
-                      <tr>
-                        <th data-field="NameOfCategory">Category Name</th>
-                        <th data-field="Action">Action</th>
-                        
-                      </tr>
-                    </thead>
+                    
+                     <div id="searchresults"></div>
 
-                    <tbody>
-                      <?php 
-                      $qry3 = mysqli_query($connection,"select * from categorytable");
-                      while ($result3 = mysqli_fetch_assoc($qry3)) { ?>
-                      <tr>
-                        <td><?php echo $result3['NameOfCategory']; ?></td>
-                        <td><a href="edit-category.php?CategoryId=<?php echo $result3['CategoryId'] ?>" class="btn-flat waves-effect pink accent-2 white-text">Edit</a> <a href="delete-category.php?CategoryId=<?php echo $result3['CategoryId'] ?>" onclick="return confirm('Are you sure you want to delete this item?');" class="btn-flat waves-effect pink accent-2 white-text">Delete</a></td>
-                       
-                      </tr>                     
-                     
-                     <?php } ?>
-                     
-                    </tbody>
-                  </table>
                 </div>
                 </div>
               </div>
@@ -388,6 +384,35 @@ $getUserRes = mysqli_fetch_assoc($getUserQry);
     });
     
     </script>
+
+    <script type="text/javascript">
+    
+$('#search').keyup(function()
+{
+    var searchterm = $('#search').val();
+
+        $.post('search-categories.php',{searchterm:searchterm},
+        function(data)
+        {
+            $('#searchresults').html(data);
+        });
+
+});
+
+
+$('#search').ready(function()
+{
+    var searchterm = $('#search').val();
+
+        $.post('search-categories.php',{searchterm:searchterm},
+        function(data)
+        {
+            $('#searchresults').html(data);
+        });
+    
+    
+});
+</script>
 </body>
 
 </html>

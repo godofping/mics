@@ -1,9 +1,5 @@
 <?php 
-session_start();
-
-
-$connection = mysqli_connect("localhost","root","vertrigo");
-mysqli_select_db($connection, "micsdb");
+include('connection.php');
 
 $getUserQry = mysqli_query($connection, "select * from addaccounttable where AddAccountId = '" . $_SESSION["AddAccountId"] . "'");
 $getUserRes = mysqli_fetch_assoc($getUserQry);
@@ -66,19 +62,27 @@ $getUserRes = mysqli_fetch_assoc($getUserQry);
     <header id="header" class="page-topbar">
         <!-- start header nav-->
         <div class="navbar-fixed">
-            <nav class="cyan">
+            <nav class="blue darken-4">
                 <div class="nav-wrapper">
                     <h1 class="logo-wrapper"><a href="main.php" class="brand-logo darken-1"><img src="images/materialize-logo.png" alt="materialize logo"></a> <span class="logo-text">MICS</span></h1>
                     <ul class="right hide-on-med-and-down">
+       
                         <li class="search-out">
-                            <input type="text" class="search-out-text">
+                            <input id="search" type="text" class="search-out-text">
                         </li>
                         <li>    
                             <a href="javascript:void(0);" class="waves-effect waves-block waves-light show-search"><i class="mdi-action-search"></i></a>                              
                         </li>
+
                         <li><a href="javascript:void(0);" class="waves-effect waves-block waves-light toggle-fullscreen"><i class="mdi-action-settings-overscan"></i></a>
                         </li>
-                        
+                  
+                        <li><a href="logout.php" class="btn-flat waves-effect violet accent-2 white-text"> Logout</a>
+                                    </li>
+
+
+
+
                         <!-- Dropdown Trigger -->                        
                         
                     </ul>
@@ -99,7 +103,7 @@ $getUserRes = mysqli_fetch_assoc($getUserQry);
             <!-- START LEFT SIDEBAR NAV-->
             <aside id="left-sidebar-nav">
                 <ul id="slide-out" class="side-nav fixed leftside-navigation">
-                    <li class="user-details cyan darken-2">
+                    <li class="user-details purple darken-4">
                         <div class="row">
                             <div class="col col s4 m4 l4">
                                 <img src="images/avatar.jpg" alt="" class="circle responsive-img valign profile-image">
@@ -126,17 +130,17 @@ $getUserRes = mysqli_fetch_assoc($getUserQry);
                     <?php if ($_SESSION["userlevel"] == 1) { ?>
                         <li class="bold"><a href="add-edit-delete-accounts.php" class="waves-effect waves-cyan"><i class="mdi-action-account-box"></i> Accounts</a>
                     </li>
-                      <?php } ?>
+                    
                     
 
                     <li class="bold"><a href="add-edit-delete-category.php" class="waves-effect waves-cyan"><i class="mdi-action-toc"></i> Categories</a>
                     </li>
-
+  <?php } ?>
                   
 
                    
                     <?php 
-                    $qry = mysqli_query($connection,"select * from categorytable group by CategoryId");
+                     $qry = mysqli_query($connection,"select * from categorytable where acivate = 1 group by CategoryId");
                     while ($result = mysqli_fetch_assoc($qry)) { ?>
                     
                     <li class="no-padding">
@@ -145,16 +149,16 @@ $getUserRes = mysqli_fetch_assoc($getUserQry);
                             
 
 
-                            <li class="bold"><a class="collapsible-header waves-effect waves-cyan"><i class="mdi-navigation-expand-more"></i> <?php echo $result['NameOfCategory'] ?></a>
+                            <li class="bold"><a  style="padding-left: 0.6cm;" class="collapsible-header waves-effect waves-cyan"><i class="mdi-navigation-expand-more"></i> <?php echo $result['NameOfCategory'] ?></a>
                                 <div class="collapsible-body">
                                     <ul>
                                     <?php 
-                    $qry1 = mysqli_query($connection,"select * from subcategorytable where CategoryId = '" . $result['CategoryId'] . "'");
+                    $qry1 = mysqli_query($connection,"select * from subcategorytable where CategoryId = '" . $result['CategoryId'] . "' and activate = 1");
                     while ($result1 = mysqli_fetch_assoc($qry1)) { ?>
-                                        <li><a href="menu.php?SubCategoryId=<?php echo $result1['SubCategoryId']; ?>"> <?php echo $result1['NameOfSubCategory'] ?></a>
+                                        <li><a  style="padding-left: 0.8cm;" href="menu.php?SubCategoryId=<?php echo $result1['SubCategoryId']; ?>"> <?php echo $result1['NameOfSubCategory'] ?></a>
                                         </li>
                                           <?php } ?>
-                                          <li><a href="add-edit-delete-subcategory.php?CategoryId=<?php echo $result['CategoryId']; ?>"> Add Edit Del S-Category</a>
+                                          <li><a href="add-edit-delete-subcategory.php?CategoryId=<?php echo $result['CategoryId']; ?>"> new S-Category</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -185,7 +189,7 @@ $getUserRes = mysqli_fetch_assoc($getUserQry);
             <!-- START CONTENT -->
             <section id="content">
 
-                <?php $qry2 = mysqli_query($connection,"select * from subcategorytable where SubCategoryId = '" . $_GET['SubCategoryId'] . "'"); 
+                <?php $qry2 = mysqli_query($connection,"select * from subcategorytable where SubCategoryId = '" . $_GET['SubCategoryId'] . "' and activate = 1"); 
                 $result2 = mysqli_fetch_assoc($qry2);
                 ?>
                 
@@ -225,21 +229,22 @@ $getUserRes = mysqli_fetch_assoc($getUserQry);
 
                                   <?php 
 
+
+
                                   $qry3 = mysqli_query($connection,"select * from addformtable where SubCategoryID = '" . $_GET['SubCategoryId'] . "'");
 
                                   if (mysqli_num_rows($qry3) < 1) { ?>
                                     <li class="collection-header">
-                                          <p> No Entries</p>
+                                          <p id="noentries"> No Entries</p>
                                       </li>
                                    <?php   
                                   }
+                                  ?>
 
-                                  while ($result3 = mysqli_fetch_assoc($qry3)) { ?>
-                                      <li class="collection-header">
-                                          <p><a href="view-entry.php?AddFormId=<?php echo $result3['AddFormId'] ?>&SubCategoryId=<?php echo $_GET['SubCategoryId'] ?>">View | <?php echo $result3['EntryDescription']; ?></a></p>
-                                      </li>
 
-                                <?php } ?>
+
+                                 <div id="searchresults"></div>
+                                 <input type="hidden" type="text" id="SubCategoryId" value="<?php echo $_GET['SubCategoryId']; ?>">
                                     
 
                                       
@@ -346,6 +351,45 @@ $getUserRes = mysqli_fetch_assoc($getUserQry);
     });
     
     </script>
+
+    <script type="text/javascript">
+    
+
+
+$('#search').keyup(function()
+{
+    var searchterm = $('#search').val();
+    var SubCategoryId = $('#SubCategoryId').val();
+        
+
+        $.post('search-entries.php',{searchterm:searchterm,SubCategoryId:SubCategoryId},
+        function(data)
+        {
+            $('#searchresults').html(data);
+        });
+
+});
+
+
+$('#search').ready(function()
+{
+    var searchterm = $('#search').val();
+    var SubCategoryId = $('#SubCategoryId').val();
+        
+        
+
+        $.post('search-entries.php',{searchterm:searchterm,SubCategoryId:SubCategoryId},
+        function(data)
+        {
+            $('#searchresults').html(data);
+        });
+
+});
+
+
+
+
+</script>
 </body>
 
 </html>
