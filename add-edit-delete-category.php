@@ -84,7 +84,7 @@ $getUserRes = mysqli_fetch_assoc($getUserQry);
                                                                             <label for="first_name">Search</label>
                                                                         </div>
 
-                                                                        <div class="col s12 m12 20">
+                                                                        <div class="col s12 m12 20" style="overflow: auto;">
                                                                             <div id="searchresults"></div>
                                                                         </div>
                                                                     </div>

@@ -94,9 +94,13 @@ $getUserRes = mysqli_fetch_assoc($getUserQry);
              
               <div class="row">
                 <div class="container">
-                <div class="col s12 m12 20">
+                <div class="col s12 m12 20" style="overflow: auto;">
                   
-                  
+
+                <div class="input-field col s12">
+                    <input id="searchtextbox" name="searchtextbox" type="text" class="validate">
+                    <label for="first_name">Search</label>
+                </div>
            
                 <div id="searchresults"></div>
            
@@ -150,26 +154,6 @@ $getUserRes = mysqli_fetch_assoc($getUserQry);
             </section>
             <!-- END CONTENT -->
 
-            <!-- //////////////////////////////////////////////////////////////////////////// -->
-            <!-- START RIGHT SIDEBAR NAV-->
-            <aside id="right-sidebar-nav">
-                <ul id="chat-out" class="side-nav rightside-navigation">
-                    <li class="li-hover">
-                    <a href="#" data-activates="chat-out" class="chat-close-collapse right"><i class="mdi-navigation-close"></i></a>
-                    <div id="right-search" class="row">
-                        <form class="col s12">
-                            <div class="input-field">
-                                <i class="mdi-action-search prefix"></i>
-                                <input id="icon_prefix"  type="text" class="validate">
-                                <label for="icon_prefix">Search</label>
-                            </div>
-                        </form>
-                    </div>
-                    </li>
-                    
-                </ul>
-            </aside>
-            <!-- LEFT RIGHT SIDEBAR NAV-->
 
         </div>
         <!-- END WRAPPER -->
@@ -216,9 +200,9 @@ $getUserRes = mysqli_fetch_assoc($getUserQry);
 
     <script type="text/javascript">
     
-$('#search').keyup(function()
+$('#searchtextbox').keyup(function()
 {
-    var searchterm = $('#search').val();
+    var searchterm = $('#searchtextbox').val();
 
         $.post('search-accounts.php',{searchterm:searchterm},
         function(data)
@@ -229,9 +213,9 @@ $('#search').keyup(function()
 });
 
 
-$('#search').ready(function()
+$('#searchtextbox').ready(function()
 {
-    var searchterm = $('#search').val();
+    var searchterm = $('#searchtextbox').val();
 
         $.post('search-accounts.php',{searchterm:searchterm},
         function(data)

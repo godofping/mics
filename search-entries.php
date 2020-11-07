@@ -38,7 +38,13 @@ while($row = mysqli_fetch_assoc($find_search))
 	?>
 	
 	<li class="collection-header">                                
-      <p><a href="view-entry.php?AddFormId=<?php echo $row['AddFormId'] ?>&SubCategoryId=<?php echo $SubCategoryId; ?>">View | <?php echo $row['EntryDescription']; ?></a></p>
+      <a class="white-text" href="view-entry.php?AddFormId=<?php echo $row['AddFormId'] ?>&SubCategoryId=<?php echo $SubCategoryId; ?>">
+      <div class="card-panel teal darken-4">
+         <h5>
+          <?php echo $row['EntryDescription']; ?>
+        </h5>
+      </div>
+      </a>
   </li>
 
 <?php

@@ -27,6 +27,34 @@
     <link href="js/plugins/jvectormap/jquery-jvectormap.css" type="text/css" rel="stylesheet" media="screen,projection">
     <link href="js/plugins/chartist-js/chartist.min.css" type="text/css" rel="stylesheet" media="screen,projection">
 
+    <style type="text/css">
+        input:focus,
+        select:focus,
+        textarea:focus,
+        button:focus {
+            outline: none !important;
+        }
+
+        [contenteditable="true"]:focus {
+            outline: none !important;
+        }
+
+
+        *:focus {
+            outline: none !important;
+        }
+
+
+        input:focus, input.form-control:focus {
+
+    outline:none !important;
+    outline-width: 0 !important;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+}
+    </style>
+
 
 </head>
 

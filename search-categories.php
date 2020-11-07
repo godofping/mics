@@ -28,7 +28,7 @@ else
 {
 
   ?>
-  <table class="responsive-table striped">
+  <table class="striped">
     <thead>
       <tr>
         <th data-field="NameOfCategory">Category Name</th>

@@ -59,31 +59,29 @@ $getUserRes = mysqli_fetch_assoc($getUserQry);
                     </div>
 
                                 <ul id="task-card" class="collection with-header">
-                                  
-                                
+                                    <li class="collection-header">
+                                        <p><b>Entry Title:</b>
+                                            <br>
+                                            <?php echo $result3['EntryTitle'] ?>
+                                        </p>
+                                    </li>
 
-                                 
-                                      <li class="collection-header">
-                                        <h5 style="color: black" class="task-card-title">Entry Title: <?php echo $result3['EntryTitle'] ?></h5>
-                                      </li>
+                                    <li class="collection-header">
+                                        <p><b>Entry Description:</b>
+                                            <br>
+                                            <?php echo $result3['EntryDescription'] ?>
+                                        </p>
+                                    </li>
 
-
-                                      <li class="collection-header">
-                                        <h5 style="color: black" class="task-card-title">Entry Description: <?php echo $result3['EntryDescription'] ?></h5>
-                                      </li>
-
-
-                                      <li class="collection-header">
-                                        <h5 style="color: black" class="task-card-title">Resolution / Process Steps: <?php echo $result3['Resolution'] ?></h5>
-                                      </li>
+                                    <li class="collection-header">
+                                        <p><b>Resolution / Process Steps:</b>
+                                            <br>
+                                            <?php echo $result3['Resolution'] ?>
+                                        </p>
+                                    </li>
+                                </ul>
 
                               
-                                    
-
-                                      <li class="collection-header">
-                                           
-                                        
-                                       
               
                 <!--Flat Buttton-->
                 <div id="flat-button" class="section">

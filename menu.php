@@ -53,13 +53,20 @@ $getUserRes = mysqli_fetch_assoc($getUserQry);
                     
                      
                       <div style="text-align: right;"><a href="addentry.php?SubCategoryId=<?php echo $result2['SubCategoryId']; ?>" class="btn-flat waves-effect pink accent-2 white-text">Add Entry</a></div>
+
+                      <div class="input-field col s12">
+                                        <input id="searchtextbox" name="searchtextbox" type="text" class="validate">
+                                        <label for="first_name">Search</label>
+                                    </div>
                      
                  
                   </div>
                 </div>
                                      
                                     
-                             </li>       
+                             </li>      
+
+
                                 
 
                                   <?php 
@@ -158,9 +165,9 @@ $getUserRes = mysqli_fetch_assoc($getUserQry);
     
 
 
-$('#search').keyup(function()
+$('#searchtextbox').keyup(function()
 {
-    var searchterm = $('#search').val();
+    var searchterm = $('#searchtextbox').val();
     var SubCategoryId = $('#SubCategoryId').val();
         
 
@@ -173,9 +180,9 @@ $('#search').keyup(function()
 });
 
 
-$('#search').ready(function()
+$('#searchtextbox').ready(function()
 {
-    var searchterm = $('#search').val();
+    var searchterm = $('#searchtextbox').val();
     var SubCategoryId = $('#SubCategoryId').val();
         
         

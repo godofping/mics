@@ -10,5 +10,5 @@ SET activate = 0, datedisactivate = NOW()
 WHERE SubCategoryId = '" . $_GET['SubCategoryId'] . "'");
 
 
-header("Location: add-edit-delete-subcategory.php?CategoryId=".$_GET['CategoryId']."?success=true");
+header("Location: add-edit-delete-subcategory.php?CategoryId=".$_GET['CategoryId']."&success=true");
  ?>

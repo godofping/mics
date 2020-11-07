@@ -16,7 +16,7 @@ if (mysqli_num_rows($find_search) == 0) { ?>
 
 <?php } else { ?>
 
-  <table class="responsive-table striped">
+  <table class="striped">
     <thead>
         <tr>
           <th data-field="Full Name">Full Name</th>

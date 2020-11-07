@@ -67,9 +67,13 @@ $getUserRes = mysqli_fetch_assoc($getUserQry);
                         </div>
                     <?php } ?>
 
+                    
+
                    
 
                     <h4 class="header">Manage "<?php echo $result4['NameOfCategory']; ?>" Sub-Categories</h4>
+
+
 
                      <div class="row">
                             <div class="input-field col s12">
@@ -83,24 +87,26 @@ $getUserRes = mysqli_fetch_assoc($getUserQry);
                           </div>
                     <div class="row">
                          <!--Borderless Table-->
-            <div id="borderless-table">
-             
-              <div class="row">
-                <div class="container">
-                <div class="col s12 m12 20">
-                 
-                    <div id="searchresults"></div>
-                    <input type="text" id="CategoryId" hidden value="<?php echo $_GET['CategoryId']; ?>">
+                        <div id="borderless-table">
+                         
+                            <div class="row">
+                                <div class="container">
+                                    <div class="col s12 m12 20" style="overflow: auto;">
+                                        <div class="input-field col s12">
+                                            <input id="searchtextbox" name="searchtextbox" type="text" class="validate">
+                                            <label for="first_name">Search</label>
+                                        </div>
+                                     
+                                        <div id="searchresults"></div>
+                                        <input type="text" id="CategoryId" hidden value="<?php echo $_GET['CategoryId']; ?>">
 
-                </div>
-                </div>
-              </div>
+                                    </div>
+                                </div>
+                            </div>
 
-             
-                       
-
-
-            </div>
+                         
+                                
+                        </div>
             
                     </div>
                   </div>
@@ -193,9 +199,9 @@ $getUserRes = mysqli_fetch_assoc($getUserQry);
 
     <script type="text/javascript">
     
-$('#search').keyup(function()
+$('#searchtextbox').keyup(function()
 {
-    var searchterm = $('#search').val();
+    var searchterm = $('#searchtextbox').val();
     var CategoryId = $('#CategoryId').val();
 
         $.post('search-sub-category.php',{searchterm:searchterm,CategoryId:CategoryId},
@@ -207,9 +213,9 @@ $('#search').keyup(function()
 });
 
 
-$('#search').ready(function()
+$('#searchtextbox').ready(function()
 {
-    var searchterm = $('#search').val();
+    var searchterm = $('#searchtextbox').val();
     var CategoryId = $('#CategoryId').val();
 
         $.post('search-sub-category.php',{searchterm:searchterm,CategoryId:CategoryId},
