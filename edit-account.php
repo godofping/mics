@@ -299,7 +299,7 @@ $getUserRes = mysqli_fetch_assoc($getUserQry);
                             <div class="input-field col s12">
                     
                                 <div style="text-align: right;">
-                                   <button type="submit" class="btn-flat waves-effect pink accent-2 white-text">save</button>
+                                   <button type="submit" class="btn waves-effect waves-light green">save</button>
                                 </div>
 
                                

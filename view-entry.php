@@ -245,16 +245,19 @@ $getUserRes = mysqli_fetch_assoc($getUserQry);
                     
                     
                      
-                      <div style="text-align: right;"><?php if ($_SESSION["userlevel"] == 1) { ?>
-                        <a href="delete-entry.php?AddFormId=<?php echo $_GET['AddFormId']; ?>&SubCategoryId=<?php echo $_GET['SubCategoryId'] ?>" onclick="return confirm('Are you sure you want to delete this item?');" class="btn-flat waves-effect pink accent-2 white-text">Delete Entry</a>
+                    <div style="text-align: right;"><?php if ($_SESSION["userlevel"] == 1) { ?>
+                        <a href="delete-entry.php?AddFormId=<?php echo $_GET['AddFormId']; ?>&SubCategoryId=<?php echo $_GET['SubCategoryId'] ?>" onclick="return confirm('Are you sure you want to delete this item?');" class="btn waves-effect waves-light red">Delete Entry</a>
+                        <br><br>
                       <?php } ?>
 
-                     <a href="edit-entry.php?AddFormId=<?php echo $_GET['AddFormId']; ?>&SubCategoryId=<?php echo $_GET['SubCategoryId'] ?>" class="btn-flat waves-effect pink accent-2 white-text">Edit Entry</a>
+                         <a href="edit-entry.php?AddFormId=<?php echo $_GET['AddFormId']; ?>&SubCategoryId=<?php echo $_GET['SubCategoryId'] ?>" class="btn waves-effect waves-light indigo">Edit Entry</a>
 
-                      <a href="view-history.php?AddFormId=<?php echo $_GET['AddFormId']; ?>&SubCategoryId=<?php echo $_GET['SubCategoryId'] ?>" class="btn-flat waves-effect pink accent-2 white-text">View History</a>
+                        <br><br>
+
+                      <a href="view-history.php?AddFormId=<?php echo $_GET['AddFormId']; ?>&SubCategoryId=<?php echo $_GET['SubCategoryId'] ?>" class="btn waves-effect waves-light teal">View History</a>
                      
                  
-                  </div>
+                    </div>
                 </div>
                                      
                                     

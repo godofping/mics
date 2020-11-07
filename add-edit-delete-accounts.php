@@ -213,6 +213,8 @@ $getUserRes = mysqli_fetch_assoc($getUserQry);
                   
                     <h4 class="header">Manage Accounts</h4>
 
+                    
+
                     <?php 
                     if (isset($_GET['istaken'])) {
                         ?>

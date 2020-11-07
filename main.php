@@ -184,7 +184,7 @@ $getUserRes = mysqli_fetch_assoc($getUserQry);
                 <div class="row">
                     <div class="col s12 m12 20">
                                     <div class="card-panel">
-                                        <h1 style="font-weight: 200;text-align: center;">Welcome to MICS Knowledge Base System</h1>
+                                        <h3 style="font-weight: 200;text-align: center;">Welcome to MICS Knowledge Base System</h3>
                                         
                                     </div>
                                 </div>
@@ -335,19 +335,7 @@ $getUserRes = mysqli_fetch_assoc($getUserQry);
                         </div>
                      </div>
                      <!--card stats end-->
-                 <div class="row">
-                    <div class="col s12 m12 20">
-                                    <div class="card-panel" style="background: url(images/bg.jpg) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;height: 50vh;">
-                                        <h1 style="font-weight: 500;text-align: center; color: white;padding-top: 15vh;">
-                                         NDTC</h1>
-                                        
-                                    </div>
-                                </div>
-                </div>
+
                 <!--end container-->
             </section>
             <!-- END CONTENT -->

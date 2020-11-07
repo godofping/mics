@@ -240,7 +240,7 @@ $getUserRes = mysqli_fetch_assoc($getUserQry);
                             <div class="input-field col s12">
                     
                                 <div style="text-align: right;">
-                                   <a href="change-password.php?AddAccountId=<?php echo $getUserRes['AddAccountId']; ?>&from=profile"><button type="button" class="btn-flat waves-effect pink accent-2 white-text">Change password</button></a>
+                                   <a href="change-password.php?AddAccountId=<?php echo $getUserRes['AddAccountId']; ?>&from=profile"><button type="button" class="btn waves-effect waves-light purple">Change password</button></a>
                                 </div>
 
                                
