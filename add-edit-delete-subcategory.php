@@ -235,7 +235,7 @@ $getUserRes = mysqli_fetch_assoc($getUserQry);
                      <div class="row">
                             <div class="input-field col s12">
                     
-                                <div style="text-align: right;">
+                                <div style="text-align: right; margin-bottom: 1rem;">
                                     <a href="add-subcategory.php?CategoryId=<?php echo $_GET['CategoryId'] ?>"><button type="button" class="btn-flat waves-effect pink accent-2 white-text">New Sub-Category</button></a>
                                 </div>
 

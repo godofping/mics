@@ -29,7 +29,7 @@ else
 {
 
   ?>
-  <table>
+  <table class="responsive-table striped">
     <thead>
       <tr>
          <th data-field="NameOfSubCategory">Sub-Category Name</th>
@@ -46,7 +46,13 @@ else
 
            <tr>
               <td><?php echo $row['NameOfSubCategory']; ?></td>
-                        <td><a href="edit-subcategory.php?CategoryId=<?php echo $row['CategoryId'] ?>&SubCategoryId=<?php echo $row['SubCategoryId']; ?>" class="btn-flat waves-effect white accent-2 blue-text">Edit</a> <a href="delete-subcategory.php?CategoryId=<?php echo $row['CategoryId'] ?>&SubCategoryId=<?php echo $row['SubCategoryId'] ?>" onclick="return confirm('Are you sure you want to delete this item?');"  class="btn-flat waves-effect white accent-2 blue-text">Delete</a></td>
+                        <td>
+                          <a href="edit-subcategory.php?CategoryId=<?php echo $row['CategoryId'] ?>&SubCategoryId=<?php echo $row['SubCategoryId']; ?>" class="btn waves-effect waves-light indigo">Edit</a> 
+
+                          <br><br>
+
+                          <a href="delete-subcategory.php?CategoryId=<?php echo $row['CategoryId'] ?>&SubCategoryId=<?php echo $row['SubCategoryId'] ?>" onclick="return confirm('Are you sure you want to delete this item?');"  class="btn waves-effect waves-light red">Delete</a>
+                        </td>
             </tr>
 
      

@@ -27,7 +27,7 @@ else
 {
 
   ?>
-  <table>
+  <table class="responsive-table striped">
     <thead>
       <tr>
         <th data-field="NameOfCategory">Category Name</th>
@@ -46,9 +46,10 @@ else
               <td><?php echo $row['NameOfCategory']; ?></td>
               <td>
 
-                <a href="edit-category.php?CategoryId=<?php echo $row['CategoryId'] ?>" class="btn btn-success btn-flat waves-effect accent-2 white-text">Edit</a> 
+                <a href="edit-category.php?CategoryId=<?php echo $row['CategoryId'] ?>" class="btn waves-effect waves-light indigo">Edit</a> 
+                <br><br>
 
-                <a href="delete-category.php?CategoryId=<?php echo $row['CategoryId'] ?>" onclick="return confirm('Are you sure you want to delete this item?');" class="btn-flat waves-effect pink accent-2 white-text">Delete</a></td>
+                <a href="delete-category.php?CategoryId=<?php echo $row['CategoryId'] ?>" onclick="return confirm('Are you sure you want to delete this item?');" class="btn waves-effect waves-light red">Delete</a></td>
             </tr>
 
      

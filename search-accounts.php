@@ -16,7 +16,7 @@ if (mysqli_num_rows($find_search) == 0) { ?>
 
 <?php } else { ?>
 
-  <table class="responsive-table">
+  <table class="responsive-table striped">
     <thead>
         <tr>
           <th data-field="Full Name">Full Name</th>
@@ -39,17 +39,25 @@ if (mysqli_num_rows($find_search) == 0) { ?>
         <td>
           <a href="edit-account.php?AddAccountId=<?php echo $row['AddAccountId'] ?>&from=accountlist" class="btn waves-effect waves-light indigo">Edit</a> 
 
+          <br><br>
+
           <a href="change-password.php?AddAccountId=<?php echo $row['AddAccountId'] ?>&from=editaccount" class="btn waves-effect waves-light cyan">Change Password</a> 
+
+          <br><br>
 
           <a href="delete-account.php?AddAccountId=<?php echo $row['AddAccountId']; ?>" onclick="return confirm('Are you sure you want to delete this item?');" class="btn waves-effect waves-light red">Delete</a>
         </td>
         <?php } else { ?>
         <td>
-          <a href="edit-account.php?AddAccountId=<?php echo $row['AddAccountId'] ?>&from=accountlist" class="btn-flat grey-text" >Edit</a> 
+          <a href="edit-account.php?AddAccountId=<?php echo $row['AddAccountId'] ?>&from=accountlist" class="btn waves-effect waves-light indigo" >Edit</a> 
 
-          <a href="change-password.php?AddAccountId=<?php echo $row['AddAccountId'] ?>&from=editaccount" class="btn-flat grey-text">Change Password</a> <a href="delete-account.php?AddAccountId=<?php echo $row['AddAccountId']; ?>" onclick="return confirm('Are you sure you want to delete this item?');" class="btn-flat grey-text">Delete</a> 
+          <br><br>
 
-          <a href="activate-account.php?AddAccountId=<?php echo $row['AddAccountId']; ?>" onclick="return confirm('Are you sure you want to activate this item?');" class="btn-flat waves-effect white accent-2 blue-text">activate</a>
+          <a href="change-password.php?AddAccountId=<?php echo $row['AddAccountId'] ?>&from=editaccount" class="btn waves-effect waves-light cyan">Change Password</a> 
+
+          <br><br>
+
+          <a href="activate-account.php?AddAccountId=<?php echo $row['AddAccountId']; ?>" onclick="return confirm('Are you sure you want to activate this item?');" class="btn waves-effect waves-light yellow">activate</a>
         </td>
         <?php } ?>
 	   </tr>
