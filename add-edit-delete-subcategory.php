@@ -215,22 +215,15 @@ $getUserRes = mysqli_fetch_assoc($getUserQry);
 
                      ?>
 
-    <?php 
-                    if (isset($_GET['istaken'])) {
-                        ?>
-                        <div class="alert alert-danger">
-                       <i class="mdi-alert-error icon yellow-text text-darken-3"></i> <strong>Warning!</strong> Registration failed! Username is already taken.
-                    </div>
-
-                        <?php
-                    } elseif (isset($_GET['success'])) { ?>
-                    <div class="alert alert-success">
-                       <i class="mdi-navigation-check icon green-text text-darken-3"></i> <strong>Success!</strong> The Item is deleted!
-                    </div>
+                    <?php if (isset($_GET['success'])) { ?>
+                        <div class="card-panel teal white-text">
+                           <i class="mdi-navigation-check icon"></i> <strong>Success!</strong> The Item is deleted!
+                        </div>
                     <?php } ?>
+
                    
 
-                    <h4 class="header">Add - Edit - Delete "<?php echo $result4['NameOfCategory']; ?>" Sub-Categories</h4>
+                    <h4 class="header">Manage "<?php echo $result4['NameOfCategory']; ?>" Sub-Categories</h4>
 
                      <div class="row">
                             <div class="input-field col s12">
