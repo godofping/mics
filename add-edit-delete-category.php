@@ -13,80 +13,7 @@ $getUserRes = mysqli_fetch_assoc($getUserQry);
 
 
 
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="msapplication-tap-highlight" content="no">
-    <meta name="description" content="MICS Knowledge Base System">
-    <meta name="keywords" content="MICS Knowledge Base System">
-    <title>MICS</title>
-
-    <!-- Favicons-->
-    <link rel="icon" href="images/favicon/favicon-32x32.png" sizes="32x32">
-    <!-- Favicons-->
-    <link rel="apple-touch-icon-precomposed" href="images/favicon/apple-touch-icon-152x152.png">
-    <!-- For iPhone -->
-    <meta name="msapplication-TileColor" content="#00bcd4">
-    <meta name="msapplication-TileImage" content="images/favicon/mstile-144x144.png">
-    <!-- For Windows Phone -->
-
-
-    <!-- CORE CSS-->    
-    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection">
-    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection">
-
-
-    <!-- INCLUDED PLUGIN CSS ON THIS PAGE -->    
-    <link href="js/plugins/perfect-scrollbar/perfect-scrollbar.css" type="text/css" rel="stylesheet" media="screen,projection">
-    <link href="js/plugins/jvectormap/jquery-jvectormap.css" type="text/css" rel="stylesheet" media="screen,projection">
-    <link href="js/plugins/chartist-js/chartist.min.css" type="text/css" rel="stylesheet" media="screen,projection">
-
-
-</head>
-
-<body>
-    <!-- Start Page Loading -->
-    <div id="loader-wrapper">
-        <div id="loader"></div>        
-        <div class="loader-section section-left"></div>
-        <div class="loader-section section-right"></div>
-    </div>
-    <!-- End Page Loading -->
-
-    <!-- //////////////////////////////////////////////////////////////////////////// -->
-
-    <!-- START HEADER -->
-    <header id="header" class="page-topbar">
-        <!-- start header nav-->
-        <div class="navbar-fixed">
-            <nav class="blue darken-4">
-                <div class="nav-wrapper">
-                    <h1 class="logo-wrapper"><a href="main.php" class="brand-logo darken-1"><img src="images/materialize-logo.png" alt="materialize logo"></a> <span class="logo-text">MICS</span></h1>
-                    <ul class="right hide-on-med-and-down">
-                        <li class="search-out">
-                            <input type="text" id="search" class="search-out-text">
-                        </li>
-                        <li>    
-                            <a href="javascript:void(0);" class="waves-effect waves-block waves-light show-search"><i class="mdi-action-search"></i></a>                              
-                        </li>
-                        <li><a href="javascript:void(0);" class="waves-effect waves-block waves-light toggle-fullscreen"><i class="mdi-action-settings-overscan"></i></a>
-                        </li>
-                        
-                        <li><a href="logout.php" class="btn-flat waves-effect violet accent-2 white-text"> Logout</a>
-                                    </li>
-                        <!-- Dropdown Trigger -->                        
-                        
-                    </ul>
-                </div>
-            </nav>
-        </div>
-        <!-- end header nav-->
-    </header>
-    <!-- END HEADER -->
-
-    <!-- //////////////////////////////////////////////////////////////////////////// -->
-
+<?php include('head.php'); ?>
     <!-- START MAIN -->
     <div id="main">
         <!-- START WRAPPER -->
@@ -115,83 +42,68 @@ $getUserRes = mysqli_fetch_assoc($getUserQry);
                                  
 
                                   
-                                      <li class="collection-header">
+                                    <li class="collection-header">
                                         
                                         <div id="basic-form" class="section">
-              <div class="row">
-                <div class="col s12 m12 12">
-                  
-                   
-                     
-                   
-                        
-                        <div class="row">
-                      
-                <div class="col s12 m12 12">
-                  
-                    <h4 class="header">Manage Categories</h4>
+                                            <div class="row">
+                                                <div class="col s12 m12 12">
+                                                  
+                                                   
+                                                     
+                                                   
+                                                        
+                                                        <div class="row">
+                                                      
+                                                    <div class="col s12 m12 12">
+                                                      
+                                                        <h4 class="header">Manage Categories</h4>
 
-                    <?php if (isset($_GET['success'])) { ?>
-                        <div class="card-panel teal white-text">
-                           <i class="mdi-navigation-check icon"></i> <strong>Success!</strong> The Item is deleted!
-                        </div>
-                    <?php } ?>
-
-
-                     <div class="row">
-                            <div class="input-field col s12">
-                    
-                                <div style="text-align: right; margin-bottom: 1rem;">
-                                    <a href="add-category.php"><button type="button" class="btn-flat waves-effect pink accent-2 white-text">New Category</button></a>
-                                </div>
-
-                               
-                            </div>
-                          </div>
-                    <div class="row">
-                         <!--Borderless Table-->
-            <div id="borderless-table">
-             
-              <div class="row">
-                <div class="container">
-                <div class="col s12 m12 20">
-                    
-                     <div id="searchresults"></div>
-
-                </div>
-                </div>
-              </div>
-
-             
-                       
+                                                        <?php if (isset($_GET['success'])) { ?>
+                                                            <div class="card-panel teal white-text">
+                                                               <i class="mdi-navigation-check icon"></i> <strong>Success!</strong> The Item is deleted!
+                                                            </div>
+                                                        <?php } ?>
 
 
-            </div>
-            
-                    </div>
-                  </div>
-                </div>
-                         
-                        </div>
+                                                        <div class="row">
+                                                            <div class="input-field col s12">
+                                                                <div style="text-align: right; margin-bottom: 1rem;">
+                                                                    <a href="add-category.php"><button type="button" class="btn-flat waves-effect pink accent-2 white-text">New Category</button></a>
+                                                                </div> 
+                                                            </div>
+                                                        </div>
 
-                        
+                                                        <div class="row">
+                                                             <!--Borderless Table-->
+                                                            <div id="borderless-table">
+                                                                <div class="row">
+                                                                    <div class="container">
 
-                
-                  
-                  </div>
-                </div>  
+                                                                        <div class="input-field col s12">
+                                                                            <input id="searchtextbox" name="searchtextbox" type="text" class="validate">
+                                                                            <label for="first_name">Search</label>
+                                                                        </div>
 
+                                                                        <div class="col s12 m12 20">
+                                                                            <div id="searchresults"></div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
 
-                                        
-                                       
-                                      </li>
+                                                      </div>
+                                                    </div>
+                                                             
+                                                </div> 
+                                            </div>
+                                        </div>  
+
+                                    </li>
 
                         
                                 </ul>
                             </div>
-
-                        
-                            
 
                     </div>
                     <!--card widgets end-->
@@ -206,26 +118,7 @@ $getUserRes = mysqli_fetch_assoc($getUserQry);
             </section>
             <!-- END CONTENT -->
 
-            <!-- //////////////////////////////////////////////////////////////////////////// -->
-            <!-- START RIGHT SIDEBAR NAV-->
-            <aside id="right-sidebar-nav">
-                <ul id="chat-out" class="side-nav rightside-navigation">
-                    <li class="li-hover">
-                    <a href="#" data-activates="chat-out" class="chat-close-collapse right"><i class="mdi-navigation-close"></i></a>
-                    <div id="right-search" class="row">
-                        <form class="col s12">
-                            <div class="input-field">
-                                <i class="mdi-action-search prefix"></i>
-                                <input id="icon_prefix" type="text" class="validate">
-                                <label for="icon_prefix">Search</label>
-                            </div>
-                        </form>
-                    </div>
-                    </li>
-                    
-                </ul>
-            </aside>
-            <!-- LEFT RIGHT SIDEBAR NAV-->
+       
 
         </div>
         <!-- END WRAPPER -->
@@ -273,51 +166,35 @@ $getUserRes = mysqli_fetch_assoc($getUserQry);
     
     <!--plugins.js - Some Specific JS codes for Plugin Settings-->
     <script type="text/javascript" src="js/plugins.js"></script>
-    <!-- Toast Notification -->
+
     <script type="text/javascript">
-    // Toast Notification
-    $(window).load(function() {
-        setTimeout(function() {
-          
-        }, 3000);
-        setTimeout(function() {
-           
-        }, 5500);
-        setTimeout(function() {
-           
-        }, 18000);
-    });
     
+        $('#searchtextbox').keyup(function()
+        {
+            var searchterm = $('#searchtextbox').val();
+
+                $.post('search-categories.php',{searchterm:searchterm},
+                function(data)
+                {
+                    $('#searchresults').html(data);
+                });
+
+        });
+
+
+        $('#searchtextbox').ready(function()
+        {
+            var searchterm = $('#searchtextbox').val();
+
+                $.post('search-categories.php',{searchterm:searchterm},
+                function(data)
+                {
+                    $('#searchresults').html(data);
+                });
+            
+            
+        });
     </script>
-
-    <script type="text/javascript">
-    
-$('#search').keyup(function()
-{
-    var searchterm = $('#search').val();
-
-        $.post('search-categories.php',{searchterm:searchterm},
-        function(data)
-        {
-            $('#searchresults').html(data);
-        });
-
-});
-
-
-$('#search').ready(function()
-{
-    var searchterm = $('#search').val();
-
-        $.post('search-categories.php',{searchterm:searchterm},
-        function(data)
-        {
-            $('#searchresults').html(data);
-        });
-    
-    
-});
-</script>
 </body>
 
 </html>

@@ -2,6 +2,7 @@
 <?php
 include('connection.php');
 
+
 $search = mysqli_real_escape_string($connection,htmlentities(trim($_POST['searchterm'])));
 
 $find_search = mysqli_query($connection, "select * from categorytable where acivate = 1 and (NameOfCategory like '%$search%')");
