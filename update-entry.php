@@ -3,17 +3,17 @@ include('connection.php');
 
 $uploaddir = 'uploads/';
 $uploadfile = $uploaddir . basename($_FILES['userfile']['name']);
+$isuploaded = 0;
 
-echo "<p>";
 
 if (move_uploaded_file($_FILES['userfile']['tmp_name'], $uploadfile)) {
-  echo "File is valid, and was successfully uploaded.\n";
+  $isuploaded = 1;
 } else {
-   echo "Upload failed";
+   $isuploaded = 0;
 }
 
 
-if($uploadfile == 'uploads/')
+if($isuploaded == 0)
 {
 	mysqli_query($connection, "update addformtable set EntryTitle = '" . $_POST['EntryTitle'] . "',EntryDescription = '" . $_POST['EntryDescription'] . "',Resolution = '" . $_POST['Resolution'] . "',Author = '" . $_SESSION['AddAccountId'] . "',DateOfEntry = '" . date('Y-m-d') . "' where AddFormId = '" . $_POST['AddFormId'] . "' ");
 
@@ -31,6 +31,5 @@ else
 
 
 
-
- header("Location: view-entry.php?AddFormId=".$_POST["AddFormId"]."&SubCategoryId=".$_POST['SubCategoryId']);
+ header("Location: view-entry.php?AddFormId=".$_POST["AddFormId"]."&SubCategoryId=".$_POST['SubCategoryId']."");
  ?>
