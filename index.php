@@ -61,7 +61,9 @@
             <?php if(isset($_GET['wrong'])) 
             {
               ?> 
-              <p style="text-align: center; color: red;">Wrong username and/or password</p>
+              <div class="card-panel red white-text">
+                 <i class="mdi-alert-error icon"></i> <strong>Error!</strong> Wrong username and/or password!
+              </div>
               <?php } ?>
 
           </div>
