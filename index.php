@@ -1,13 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!--================================================================================
-    Item Name: Materialize - Material Design Admin Template
-    Version: 1.0
-    Author: GeeksLabs
-    Author URL: http://www.themeforest.net/user/geekslabs
-================================================================================ -->
-
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
@@ -62,7 +55,7 @@
             {
               ?> 
               <div class="card-panel red white-text">
-                 <i class="mdi-alert-error icon"></i> <strong>Error!</strong> Wrong username and/or password!
+                 <i class="mdi-alert-error icon"></i> Wrong username and/or password!
               </div>
               <?php } ?>
 
