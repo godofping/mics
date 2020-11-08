@@ -1,6 +1,6 @@
 /*
 SQLyog Ultimate v8.53 
-MySQL - 5.5.5-10.1.38-MariaDB : Database - micsdb
+MySQL - 5.5.5-10.1.37-MariaDB : Database - micsdb
 *********************************************************************
 */
 
@@ -33,11 +33,11 @@ CREATE TABLE `addaccounttable` (
   `active` int(1) DEFAULT NULL,
   `dateofdeactivate` datetime DEFAULT NULL,
   PRIMARY KEY (`AddAccountId`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
 
 /*Data for the table `addaccounttable` */
 
-insert  into `addaccounttable`(`AddAccountId`,`FirstName`,`MiddleName`,`LastName`,`Division`,`ContactNumber`,`OfficeLocation`,`Username`,`Password`,`userlevel`,`active`,`dateofdeactivate`) values (1,'a','a','a','Developers','a','5th Floor','raijin','b',2,1,'2017-04-27 16:25:23'),(2,'Mer','Cu','Ry','Admin','none','Hell','admin','admin',1,1,NULL),(3,'fn','mn','kn','Division 2','09751111111','2nd Floor','a','b',2,1,'2017-04-28 13:03:45'),(5,'aaa','mmm','sss','Division 1','121332131','6th Floor','aaa','aaa',2,1,'2017-04-28 16:09:05'),(6,'Tyrion','','','','','','','',2,0,'2017-04-27 15:35:42'),(7,'Tyrion','Lannister','Lannister','Division 1','snd a Raven','6th Floor','imp','imp',2,0,'2017-04-28 10:55:54'),(8,'bato','magaziin','baril','','0926262682','','bato','bato',2,1,'2017-04-27 09:01:25'),(9,'M','N','RAS',NULL,'8-700',NULL,'mras','mras',1,1,NULL),(10,'wer','werwe','wer','','wer','1st Floor','wer','wrwerwerwrwerwrwerwerwerwer',2,0,'2017-04-28 10:57:36'),(11,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'12345678',NULL,NULL,NULL),(12,'ras','ras','ras','','ras','2nd Floor','ras','addaccountttt',2,1,NULL),(13,'MR','GG','M','','23','','m','12345678',2,0,'2017-04-28 10:59:16'),(14,'asdasdasd','asdasdasd','asdasdasd','','asdasdasd','','asdasdasd','asdasdasd',2,1,NULL),(15,'f','m','l','','123','','fiore','12345678',2,1,NULL),(16,'sd','sd','sd','','','','sd','sdsdsdsddsdsd',2,1,NULL);
+insert  into `addaccounttable`(`AddAccountId`,`FirstName`,`MiddleName`,`LastName`,`Division`,`ContactNumber`,`OfficeLocation`,`Username`,`Password`,`userlevel`,`active`,`dateofdeactivate`) values (1,'a','a','a','Developers','a','5th Floor','raijin','123',2,0,'2020-11-07 20:33:36'),(2,'Mer','Cu','Ry','Admin','none','1st Floor','admin','admin',1,1,NULL),(3,'fn','mn','kn','Division 2','09751111111','2nd Floor','a','b',2,1,'2017-04-28 13:03:45'),(5,'aaa','mmm','sss','Division 1','121332131','6th Floor','aaa','aaa',2,1,'2017-04-28 16:09:05'),(6,'Tyrion','','','','','','','',2,0,'2017-04-27 15:35:42'),(7,'Tyrion','Lannister','Lannister','Division 1','snd a Raven','6th Floor','imp','imp',2,0,'2017-04-28 10:55:54'),(8,'bato','magaziin','baril','','0926262682','','bato','bato',2,1,'2017-04-27 09:01:25'),(9,'M','N','RAS',NULL,'8-700',NULL,'mras','mras',1,1,NULL),(10,'wer','werwe','wer','','wer','1st Floor','wer','wrwerwerwrwerwrwerwerwerwer',2,0,'2017-04-28 10:57:36'),(11,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'12345678',NULL,NULL,NULL),(12,'ras','ras','ras','','ras','2nd Floor','ras','addaccountttt',2,1,NULL),(13,'MR','GG','M','','23','','m','12345678',2,0,'2020-11-07 19:30:27'),(14,'asdasdasd','asdasdasd','asdasdasd','','asdasdasd','','asdasdasd','asdasdasd',2,1,NULL),(15,'f','m','l','','123','','fiore','12345678',2,1,NULL),(16,'sd','sd','sd','','','','sd','sdsdsdsddsdsd',2,1,NULL),(17,'ta','ta','te','','taat','','tae','tae123',2,1,NULL);
 
 /*Table structure for table `addformtable` */
 
@@ -53,11 +53,11 @@ CREATE TABLE `addformtable` (
   `Author` varchar(60) DEFAULT NULL,
   `SubCategoryID` int(6) DEFAULT NULL,
   PRIMARY KEY (`AddFormId`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=latin1;
 
 /*Data for the table `addformtable` */
 
-insert  into `addformtable`(`AddFormId`,`ImagePath`,`EntryTitle`,`EntryDescription`,`Resolution`,`DateOfEntry`,`Author`,`SubCategoryID`) values (3,'uploads/bgtransnotext.png','mangkanr','mang','man','2017-04-14','2',1),(5,'uploads/bgtransnotext.png','1','1','1','2017-04-14','2',2),(6,'uploads/','sfdsfd','ada da da da dad ad da da da da','asdasd','2017-04-27','9',1),(9,'','gg','gg','ggg','2017-04-15','2',1),(13,'uploads/no-photo.jpg','asd','d','sdasd','2017-04-15','2',1),(15,'uploads/no-photo.jpg','flashdrive','gwapo','ghhh','2017-04-16','2',3),(16,'uploads/no-photo.jpg','malfuntion','My mouse is so cute and I distroyed it','I need a new and awesome mouse','2017-04-19','4',2),(18,'uploads/no-photo.jpg','sss','zzz','a','2017-04-24','2',1),(19,'uploads/no-photo.jpg','werwer','wer','ererere','2017-04-25','2',1),(20,'uploads/no-photo.jpg','ssf','sf','sf','2017-04-28','2',1);
+insert  into `addformtable`(`AddFormId`,`ImagePath`,`EntryTitle`,`EntryDescription`,`Resolution`,`DateOfEntry`,`Author`,`SubCategoryID`) values (3,'uploads/bgtransnotext.png','this is the entry title','mang','manasd','2020-11-08','2',1),(6,'uploads/','sfdsfd','ada da da da dad ad da da da da','asdasd','2017-04-27','9',1),(9,'','gg','gg','ggg','2017-04-15','2',1),(13,'uploads/no-photo.jpg','asd','d','sdasd','2017-04-15','2',1),(15,'uploads/no-photo.jpg','flashdrive','gwapo','ghhh','2017-04-16','2',3),(16,'uploads/no-photo.jpg','malfuntion','My mouse is so cute and I distroyed it','I need a new and awesome mouse','2017-04-19','4',2),(18,'uploads/no-photo.jpg','sss','zzz','a','2017-04-24','2',1),(19,'uploads/no-photo.jpg','werwer','wer','ererere','2017-04-25','2',1),(20,'uploads/no-photo.jpg','ssf','sf','sf','2017-04-28','2',1),(21,'uploads/backgrounimage.png','asd','asdasd','asdasdasd','2020-11-07','17',1),(22,'uploads/asdasd.png','tae','tae','tea','2020-11-08','17',11);
 
 /*Table structure for table `categorytable` */
 
@@ -69,11 +69,11 @@ CREATE TABLE `categorytable` (
   `acivate` int(1) DEFAULT NULL,
   `dateofdisactivate` datetime DEFAULT NULL,
   PRIMARY KEY (`CategoryId`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 
 /*Data for the table `categorytable` */
 
-insert  into `categorytable`(`CategoryId`,`NameOfCategory`,`acivate`,`dateofdisactivate`) values (1,'Hardware',1,NULL),(2,'Software',1,NULL),(3,'Network',1,NULL),(4,'wewGG',0,'2017-04-20 10:13:33'),(5,'Airconditioner',0,'2017-04-20 14:29:39'),(6,'Communication',1,NULL);
+insert  into `categorytable`(`CategoryId`,`NameOfCategory`,`acivate`,`dateofdisactivate`) values (1,'Hardware',1,NULL),(2,'Software',1,NULL),(3,'Network',1,NULL),(4,'wewGG',0,'2017-04-20 10:13:33'),(5,'Airconditioner',0,'2017-04-20 14:29:39'),(6,'Communication',1,NULL),(7,'Hardware',0,'2020-11-07 20:40:18'),(8,'sdasdasd asda sd asd asda sda sdasd asd asd asd asda sdad ',0,'2020-11-08 07:49:15'),(9,'tae',0,'2020-11-08 07:53:26');
 
 /*Table structure for table `editformtable` */
 
@@ -90,11 +90,11 @@ CREATE TABLE `editformtable` (
   `EditDescription` varchar(200) DEFAULT NULL,
   `AddFormId` int(6) DEFAULT NULL,
   PRIMARY KEY (`EditId`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
 
 /*Data for the table `editformtable` */
 
-insert  into `editformtable`(`EditId`,`ImagePath`,`EntryTitle`,`EntryDescription`,`Resolution`,`DateOfEdit`,`Author`,`EditDescription`,`AddFormId`) values (1,'uploads/bgtransnotext.png','mangkanr','mang','man','2017-04-14','2','ma',3),(2,'uploads/bgtrans.png','asd','drex','drexron','2017-04-15','2','',14),(3,'uploads/Lake-pier-mountains-sky-stars-night_1920x1080.jpg','asd','drex','drex','2017-04-15','2','',14),(4,'uploads/Lake-pier-mountains-sky-stars-night_1920x1080.jpg','asd','drex','drexronc','2017-04-15','2','',14),(5,'uploads/Lake-pier-mountains-sky-stars-night_1920x1080.jpg','et','ed','rd','2017-04-15','2','',14),(6,'uploads/Lake-pier-mountains-sky-stars-night_1920x1080.jpg','et','ed','rd','2017-04-15','2','xx',14),(7,'uploads/edited.png','et1a','entrya','resa','2017-04-15','3','bag-0',2),(8,'uploads/jon.jpg','got','Tits and wines','Where are the Gods of tits and wines?','2017-04-20','2','',17),(9,'uploads/no-photo.jpg','aaaa','','','2017-04-24','','',17),(10,'uploads/','sfdsfd','ada da da da dad ad da da da da','asdasd','2017-04-27','9','',6);
+insert  into `editformtable`(`EditId`,`ImagePath`,`EntryTitle`,`EntryDescription`,`Resolution`,`DateOfEdit`,`Author`,`EditDescription`,`AddFormId`) values (1,'uploads/bgtransnotext.png','mangkanr','mang','man','2017-04-14','2','ma',3),(2,'uploads/bgtrans.png','asd','drex','drexron','2017-04-15','2','',14),(3,'uploads/Lake-pier-mountains-sky-stars-night_1920x1080.jpg','asd','drex','drex','2017-04-15','2','',14),(4,'uploads/Lake-pier-mountains-sky-stars-night_1920x1080.jpg','asd','drex','drexronc','2017-04-15','2','',14),(5,'uploads/Lake-pier-mountains-sky-stars-night_1920x1080.jpg','et','ed','rd','2017-04-15','2','',14),(6,'uploads/Lake-pier-mountains-sky-stars-night_1920x1080.jpg','et','ed','rd','2017-04-15','2','xx',14),(7,'uploads/edited.png','et1a','entrya','resa','2017-04-15','3','bag-0',2),(8,'uploads/jon.jpg','got','Tits and wines','Where are the Gods of tits and wines?','2017-04-20','2','',17),(9,'uploads/no-photo.jpg','aaaa','','','2017-04-24','','',17),(10,'uploads/','sfdsfd','ada da da da dad ad da da da da','asdasd','2017-04-27','9','',6),(11,'uploads/bgtransnotext.png','mangkanr','mang','manasd','2020-11-08','2','asdasd',3),(12,'uploads/bgtransnotext.png','mangkanr','mang','manasd','2020-11-08','2','a',3),(13,'uploads/bgtransnotext.png','this is the entry title','mang','manasd','2020-11-08','2','',3),(14,'uploads/bgtransnotext.png','this is the entry title','mang','manasd','2020-11-08','2','',3);
 
 /*Table structure for table `problemtable` */
 
@@ -120,11 +120,11 @@ CREATE TABLE `subcategorytable` (
   `activate` int(1) DEFAULT '1',
   `datedisactivate` datetime DEFAULT NULL,
   PRIMARY KEY (`SubCategoryId`)
-) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=latin1;
 
 /*Data for the table `subcategorytable` */
 
-insert  into `subcategorytable`(`SubCategoryId`,`NameOfSubCategory`,`CategoryId`,`activate`,`datedisactivate`) values (1,'System Unit',1,1,NULL),(2,'Mouse',1,1,NULL),(3,'Keyboard',1,1,NULL),(4,'Speaker',1,1,NULL),(5,'Web cam',1,1,NULL),(6,'Mic',1,0,'2017-04-20 10:46:37'),(7,'Printer',1,0,'2017-04-28 11:05:45'),(8,'Scanner',1,0,'2017-04-21 10:51:21'),(9,'Flash Drive',1,0,'2017-04-20 10:52:53'),(10,'External Drive',1,0,'2017-04-28 11:04:37'),(11,'Operating System',2,1,NULL),(12,'Microsoft Office',2,1,NULL),(13,'Virus',2,1,NULL),(14,'Blue Screen ',2,1,NULL),(15,'Drivers',2,1,NULL),(16,'No Internet',3,1,NULL),(18,'dasdads',6,0,'2017-04-21 10:45:22'),(19,NULL,NULL,0,NULL),(20,NULL,NULL,0,NULL),(21,'',5,1,NULL),(22,'anything',6,1,NULL),(23,'asdadasdasdasdaadad',6,0,'2017-04-28 10:21:35'),(24,'anything particular',6,1,NULL),(25,'anythin at all',6,1,NULL),(26,'fiore error',6,0,'2019-05-10 08:36:11'),(27,'',6,0,'2017-04-28 10:25:06'),(28,'',6,0,'2017-04-28 10:26:58'),(29,'',6,0,'2017-04-28 10:27:49'),(30,'',6,0,'2017-04-28 10:28:11'),(31,'',6,0,'2017-04-28 10:31:31'),(32,'something',3,1,NULL),(33,'printer',2,0,'2019-05-10 08:35:53'),(34,'',1,0,'2019-05-10 08:35:31'),(35,'Printer',1,1,NULL),(36,'',2,0,'2017-04-28 13:18:35');
+insert  into `subcategorytable`(`SubCategoryId`,`NameOfSubCategory`,`CategoryId`,`activate`,`datedisactivate`) values (1,'System Unit',1,1,NULL),(2,'Mouse',1,1,NULL),(3,'Keyboard',1,1,NULL),(4,'Speaker',1,1,NULL),(5,'Web cam',1,1,NULL),(6,'Mic',1,0,'2017-04-20 10:46:37'),(7,'Printer',1,0,'2017-04-28 11:05:45'),(8,'Scanner',1,0,'2017-04-21 10:51:21'),(9,'Flash Drive',1,0,'2017-04-20 10:52:53'),(10,'External Drive',1,0,'2017-04-28 11:04:37'),(11,'Operating System',2,1,NULL),(12,'Microsoft Office',2,1,NULL),(13,'Virus',2,1,NULL),(14,'Blue Screen ',2,1,NULL),(15,'Drivers',2,1,NULL),(16,'No Internet',3,1,NULL),(18,'dasdads',6,0,'2017-04-21 10:45:22'),(19,NULL,NULL,0,NULL),(20,NULL,NULL,0,NULL),(21,'',5,1,NULL),(22,'anything',6,1,NULL),(23,'asdadasdasdasdaadad',6,0,'2017-04-28 10:21:35'),(24,'anything particular',6,1,NULL),(25,'anythin at all',6,1,NULL),(26,'fiore error',6,0,'2019-05-10 08:36:11'),(27,'',6,0,'2017-04-28 10:25:06'),(28,'',6,0,'2017-04-28 10:26:58'),(29,'',6,0,'2017-04-28 10:27:49'),(30,'',6,0,'2017-04-28 10:28:11'),(31,'',6,0,'2017-04-28 10:31:31'),(32,'something',3,1,NULL),(33,'printer',2,0,'2019-05-10 08:35:53'),(34,'',1,0,'2019-05-10 08:35:31'),(35,'Printer',1,1,NULL),(36,'',2,0,'2017-04-28 13:18:35'),(37,'a',1,0,'2020-11-08 07:50:05'),(38,'asdasd',1,0,'2020-11-08 07:52:59');
 
 /*Table structure for table `view_edit_history` */
 

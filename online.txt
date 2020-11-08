@@ -1,2 +1,11 @@
 $connection = mysqli_connect("localhost", "mangkanor","uZSJ&0qH#Y62df") or trigger_error(error_msg);
 mysqli_select_db($connection,"mics_db");
+
+
+alyasmice@gmail.com
+
+mics
+@FQGpVa%I(gC6BvJOOZQ
+
+
+https://wised-varactor.000webhostapp.com/
