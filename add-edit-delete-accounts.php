@@ -93,14 +93,18 @@ $getUserRes = mysqli_fetch_assoc($getUserQry);
             <div id="borderless-table">
              
               <div class="row">
-                <div class="container">
-                <div class="col s12 m12 20" style="overflow: auto;">
-                  
+                <div class="container"> 
 
                 <div class="input-field col s12">
                     <input id="searchtextbox" name="searchtextbox" type="text" class="validate">
                     <label for="first_name">Search</label>
                 </div>
+
+
+                <div class="col s12 m12 20" style="overflow: auto;">
+                  
+
+                
            
                 <div id="searchresults"></div>
            

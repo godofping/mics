@@ -7,7 +7,7 @@ $SubCategoryId = mysqli_real_escape_string($connection,htmlentities(trim($_POST[
 
 
 
-$find_search = mysqli_query($connection, "select * from addformtable where SubCategoryID = '" . $SubCategoryId . "' and (EntryDescription like '%$search%')");
+$find_search = mysqli_query($connection, "select * from addformtable where SubCategoryID = '" . $SubCategoryId . "' and (EntryTitle like '%$search%')");
 
 
 
@@ -41,7 +41,7 @@ while($row = mysqli_fetch_assoc($find_search))
       <a class="white-text" href="view-entry.php?AddFormId=<?php echo $row['AddFormId'] ?>&SubCategoryId=<?php echo $SubCategoryId; ?>">
       <div class="card-panel teal darken-4">
          <h5>
-          <?php echo $row['EntryDescription']; ?>
+          <?php echo $row['EntryTitle']; ?>
         </h5>
       </div>
       </a>
