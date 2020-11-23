@@ -33,11 +33,11 @@ CREATE TABLE `addaccounttable` (
   `active` int(1) DEFAULT NULL,
   `dateofdeactivate` datetime DEFAULT NULL,
   PRIMARY KEY (`AddAccountId`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
 
 /*Data for the table `addaccounttable` */
 
-insert  into `addaccounttable`(`AddAccountId`,`FirstName`,`MiddleName`,`LastName`,`Division`,`ContactNumber`,`OfficeLocation`,`Username`,`Password`,`userlevel`,`active`,`dateofdeactivate`) values (1,'a','a','a','Developers','a','5th Floor','raijin','123',2,0,'2020-11-07 20:33:36'),(2,'Mer','Cu','Ry','Admin','none','1st Floor','admin','admin',1,1,NULL),(3,'fn','mn','kn','Division 2','09751111111','2nd Floor','a','b',2,1,'2017-04-28 13:03:45'),(5,'aaa','mmm','sss','Division 1','121332131','6th Floor','aaa','aaa',2,1,'2017-04-28 16:09:05'),(6,'Tyrion','','','','','','','',2,0,'2017-04-27 15:35:42'),(7,'Tyrion','Lannister','Lannister','Division 1','snd a Raven','6th Floor','imp','imp',2,0,'2017-04-28 10:55:54'),(8,'bato','magaziin','baril','','0926262682','','bato','bato',2,1,'2017-04-27 09:01:25'),(9,'M','N','RAS',NULL,'8-700',NULL,'mras','mras',1,1,NULL),(10,'wer','werwe','wer','','wer','1st Floor','wer','wrwerwerwrwerwrwerwerwerwer',2,0,'2017-04-28 10:57:36'),(11,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'12345678',NULL,NULL,NULL),(12,'ras','ras','ras','','ras','2nd Floor','ras','addaccountttt',2,1,NULL),(13,'MR','GG','M','','23','','m','12345678',2,0,'2020-11-07 19:30:27'),(14,'asdasdasd','asdasdasd','asdasdasd','','asdasdasd','','asdasdasd','asdasdasd',2,1,NULL),(15,'f','m','l','','123','','fiore','12345678',2,1,NULL),(16,'sd','sd','sd','','','','sd','sdsdsdsddsdsd',2,1,NULL),(17,'ta','ta','te','','taat','','tae','tae123',2,1,NULL);
+insert  into `addaccounttable`(`AddAccountId`,`FirstName`,`MiddleName`,`LastName`,`Division`,`ContactNumber`,`OfficeLocation`,`Username`,`Password`,`userlevel`,`active`,`dateofdeactivate`) values (1,'Christian','Benigno','Bayer','Developers','a','5th Floor','raijin','123',2,0,'2020-11-07 20:33:36'),(2,'Ivy','Laurel','Morales','Admin','none','1st Floor','admin','admin',1,1,NULL);
 
 /*Table structure for table `addformtable` */
 
@@ -45,19 +45,17 @@ DROP TABLE IF EXISTS `addformtable`;
 
 CREATE TABLE `addformtable` (
   `AddFormId` int(6) NOT NULL AUTO_INCREMENT,
-  `ImagePath` varchar(60) DEFAULT NULL,
-  `EntryTitle` varchar(60) DEFAULT NULL,
-  `EntryDescription` varchar(200) DEFAULT NULL,
+  `ImagePath` text,
+  `EntryTitle` text,
+  `EntryDescription` text,
   `Resolution` text,
   `DateOfEntry` date DEFAULT NULL,
   `Author` varchar(60) DEFAULT NULL,
   `SubCategoryID` int(6) DEFAULT NULL,
   PRIMARY KEY (`AddFormId`)
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=latin1;
 
 /*Data for the table `addformtable` */
-
-insert  into `addformtable`(`AddFormId`,`ImagePath`,`EntryTitle`,`EntryDescription`,`Resolution`,`DateOfEntry`,`Author`,`SubCategoryID`) values (3,'uploads/bgtransnotext.png','this is the entry title','mang','manasd','2020-11-08','2',1),(6,'uploads/','sfdsfd','ada da da da dad ad da da da da','asdasd','2017-04-27','9',1),(9,'','gg','gg','ggg','2017-04-15','2',1),(13,'uploads/no-photo.jpg','asd','d','sdasd','2017-04-15','2',1),(15,'uploads/no-photo.jpg','flashdrive','gwapo','ghhh','2017-04-16','2',3),(16,'uploads/no-photo.jpg','malfuntion','My mouse is so cute and I distroyed it','I need a new and awesome mouse','2017-04-19','4',2),(18,'uploads/no-photo.jpg','sss','zzz','a','2017-04-24','2',1),(19,'uploads/no-photo.jpg','werwer','wer','ererere','2017-04-25','2',1),(20,'uploads/no-photo.jpg','ssf','sf','sf','2017-04-28','2',1),(21,'uploads/backgrounimage.png','asd','asdasd','asdasdasd','2020-11-07','17',1),(22,'uploads/asdasd.png','tae','tae','tea','2020-11-08','17',11);
 
 /*Table structure for table `categorytable` */
 
@@ -90,11 +88,9 @@ CREATE TABLE `editformtable` (
   `EditDescription` varchar(200) DEFAULT NULL,
   `AddFormId` int(6) DEFAULT NULL,
   PRIMARY KEY (`EditId`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
 
 /*Data for the table `editformtable` */
-
-insert  into `editformtable`(`EditId`,`ImagePath`,`EntryTitle`,`EntryDescription`,`Resolution`,`DateOfEdit`,`Author`,`EditDescription`,`AddFormId`) values (1,'uploads/bgtransnotext.png','mangkanr','mang','man','2017-04-14','2','ma',3),(2,'uploads/bgtrans.png','asd','drex','drexron','2017-04-15','2','',14),(3,'uploads/Lake-pier-mountains-sky-stars-night_1920x1080.jpg','asd','drex','drex','2017-04-15','2','',14),(4,'uploads/Lake-pier-mountains-sky-stars-night_1920x1080.jpg','asd','drex','drexronc','2017-04-15','2','',14),(5,'uploads/Lake-pier-mountains-sky-stars-night_1920x1080.jpg','et','ed','rd','2017-04-15','2','',14),(6,'uploads/Lake-pier-mountains-sky-stars-night_1920x1080.jpg','et','ed','rd','2017-04-15','2','xx',14),(7,'uploads/edited.png','et1a','entrya','resa','2017-04-15','3','bag-0',2),(8,'uploads/jon.jpg','got','Tits and wines','Where are the Gods of tits and wines?','2017-04-20','2','',17),(9,'uploads/no-photo.jpg','aaaa','','','2017-04-24','','',17),(10,'uploads/','sfdsfd','ada da da da dad ad da da da da','asdasd','2017-04-27','9','',6),(11,'uploads/bgtransnotext.png','mangkanr','mang','manasd','2020-11-08','2','asdasd',3),(12,'uploads/bgtransnotext.png','mangkanr','mang','manasd','2020-11-08','2','a',3),(13,'uploads/bgtransnotext.png','this is the entry title','mang','manasd','2020-11-08','2','',3),(14,'uploads/bgtransnotext.png','this is the entry title','mang','manasd','2020-11-08','2','',3);
 
 /*Table structure for table `problemtable` */
 
@@ -157,9 +153,9 @@ DROP TABLE IF EXISTS `view_entry`;
 
 /*!50001 CREATE TABLE  `view_entry`(
  `AddFormId` int(6) ,
- `ImagePath` varchar(60) ,
- `EntryTitle` varchar(60) ,
- `EntryDescription` varchar(200) ,
+ `ImagePath` text ,
+ `EntryTitle` text ,
+ `EntryDescription` text ,
  `Resolution` text ,
  `DateOfEntry` date ,
  `Author` varchar(60) ,

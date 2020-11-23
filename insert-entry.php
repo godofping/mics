@@ -5,17 +5,11 @@ include('connection.php');
 $uploaddir = 'uploads/';
 $uploadfile = $uploaddir . basename($_FILES['userfile']['name']);
 
-echo "<p>";
 
-if (move_uploaded_file($_FILES['userfile']['tmp_name'], $uploadfile)) {
-  echo "File is valid, and was successfully uploaded.\n";
-} else {
-   echo "Upload failed";
-}
+move_uploaded_file($_FILES['userfile']['tmp_name'], $uploadfile);
 
 if ($uploadfile == 'uploads/') {
 	$uploadfile = 'uploads/no-photo.jpg';
-
 }
 
 
