@@ -61,21 +61,19 @@ $getUserRes = mysqli_fetch_assoc($getUserQry);
 
 
 
-
-
                       <form enctype="multipart/form-data" method="POST" action="insert-entry.php"  class="col s12">
                         <div class="row">
  
-               <div class="file-field input-field col s12">
-                <div class="waves-effect waves-light btn">
-                    <span>IMG</span>
-                    <input name="userfile" id="userfile" type="file" accept="image/*;capture=camera">
-                </div>
-                <div class="file-path-wrapper">
-                    <input class="file-path validate" type="text">
-                </div>
-                </div>
-            </div>
+                       <div class="file-field input-field col s12">
+                            <div class="waves-effect waves-light btn">
+                                <span>IMG</span>
+                                <input name="userfile" id="userfile" type="file" accept="image/jpeg,image/png,image/gif,jpg|png|gif" capture="camera">
+                            </div>
+                            <div class="file-path-wrapper">
+                                <input class="file-path validate" type="text">
+                            </div>
+                            </div>
+                        </div>
                         <div class="row">
                           <div class="input-field col s12">
                             <input id="EntryTitle" required name="EntryTitle" type="text">
