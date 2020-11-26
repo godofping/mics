@@ -69,7 +69,7 @@ $getUserRes = mysqli_fetch_assoc($getUserQry);
                <div class="file-field input-field col s12">
                 <div class="waves-effect waves-light btn">
                     <span>IMG</span>
-                    <input name="userfile" id="userfile" type="file">
+                    <input name="userfile" id="userfile" type="file" accept="image/*;capture=camera">
                 </div>
                 <div class="file-path-wrapper">
                     <input class="file-path validate" type="text">
